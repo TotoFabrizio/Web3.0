@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include("./partials/head") %>
+        <title>Web 3.0 demo</title>
+    </head>
+    <%- include("./partials/header") %>
+    <body class="">
+        <form
+            class="d-flex justify-content-center mt-5"
+            action="/users/register"
+            method="post"
+        >
+            <div class="card" style="width: 500px">
+                <h2 class="align-self-center">Register</h2>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">
+                        Email
+                    </span>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Email"
+                        aria-label="Email"
+                        aria-describedby="addon-wrapping"
+                        name="email"
+                    />
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">
+                        Password
+                    </span>
+                    <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Password"
+                        aria-label="password"
+                        aria-describedby="addon-wrapping"
+                        name="password"
+                    />
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">
+                        Confirm Password
+                    </span>
+                    <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Confirm Password"
+                        aria-label="confirm-password"
+                        aria-describedby="addon-wrapping"
+                        name="confirmPassword"
+                    />
+                </div>
+                <div class="align-self-center">
+                    <button type="submit" class="btn btn-secondary">
+                        Register
+                    </button>
+                </div>
+                <% if(typeof errors !="undefined" ) {%>
+                <div class="alert alert-danger" role="alert">
+                    <p>Errores</p>
+                    <ul>
+                        <% for(let i=0; i < errors.length; i++) {%>
+                        <li><%= errors[i].msg %></li>
+                        <% } %>
+                    </ul>
+                </div>
+                <% } %>
+            </div>
+        </form>
+    </body>
+</html>
