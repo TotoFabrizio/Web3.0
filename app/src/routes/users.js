@@ -7,4 +7,6 @@ const validateRegister = require("../middlewares/registerValid");
 router.get("/register", userController.register);
 router.post("/register", validateRegister, userController.saveUser);
 
+router.get("/login",userController.login);
+
 module.exports = router;

@@ -4,7 +4,8 @@
     CREATE TABLE users(
         id INT(10) AUTO_INCREMENT NOT NULL,
         email VARCHAR(50) NOT NULL UNIQUE,
-        password VARCHAR(60) NOT NULL,
+        username VARCHAR(50) NOT NULL,
+        walletaddress VARCHAR(50) NOT NULL,
         PRIMARY KEY (id)
     );
     INSERT INTO
@@ -12,15 +13,6 @@
     VALUES(
         DEFAULT,
         "tomas.fabrizio02@gmail.com",
-        "$2a$10$Dg4juHqOZihiPlDd6aUlQuH.LLuQCFYYvMZJQ0sqJmCEzWDcc9cVu"
-    ),
-    (
-        DEFAULT,
-        "juanibordil@gmail.com",
-        "$2a$10$otJjZB4dcgnt6.G0EAEXeuZJqoMuTlMXUFeRuJnV.wvM3vAyL22bm"
-    ),
-    (
-        DEFAULT,
-        'qwe@qwe.com',
-        '$2a$10$HWGehePpXekQ9jp2hvyw1eNnE7FMPvRQHpLjGVZYtLyom0xklNnDa'
+        "toto fabrizio",
+        "0x24f7AF0FB4E5F5CA059C554a54Ea074F0cA67a62"
     );

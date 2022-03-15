@@ -5,7 +5,6 @@ window.onload = async () => {
   } else {
     alert("No ETH brower extension detected.");
   }
-  console.log(window.localStorage.getItem("userAddress"));
   // Load in Localstore key
   window.userAddress = window.localStorage.getItem("userAddress");
   showAddress();
@@ -59,7 +58,16 @@ async function loginWithEth() {
         });
       window.userAddress = selectedAccount;
       window.localStorage.setItem("userAddress", selectedAccount);
-      showAddress();
+      console.log(selectedAccount);
+      const data = {
+        walletaddress: selectedAccount
+      }
+      const response = await fetch("/api/users/create", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+      });
+      window.location.replace(response.url)
     } catch (error) {
       console.error(error);
     }
