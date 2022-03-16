@@ -3,16 +3,24 @@
     <head>
         <%- include("./partials/head") %>
         <title>Web 3.0 demo</title>
-        <script defer src="/js/showEthAddress.js"></script>
+        <script defer src="/js/index.js"></script>
     </head>
     <%- include("./partials/header") %>
     <body class="">
-        <div width="500px">
+        <div class="d-flex justify-content-center mt-5">
             <div
-                class="alert alert-success invisible"
-                role="alert"
-                id="userAddress"
-            ></div>
+                class="card d-none alert alert-success"
+                style="width: 500px"
+                id="userData"
+            >
+                <div class="card-body">
+                    <ul>
+                        <li class="" role="alert" id="userAddress"></li>
+                        <li class="" role="alert" id="userName"></li>
+                        <li class="" role="alert" id="userEmail"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>

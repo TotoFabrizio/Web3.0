@@ -25,11 +25,11 @@ function truncateAddress(address) {
 // Display or remove the users know address on the frontend
 function showAddress() {
   if (!window.userAddress) {
-    document.getElementById("userAddress").classList.add("invisible");
+    document.getElementById("userAddress").classList.add("d-none");
     document.getElementById("userAddress").innerText = "";
     return false;
   }
-  document.getElementById("userAddress").classList.remove("invisible");
+  document.getElementById("userAddress").classList.remove("d-none");
   document.getElementById(
     "userAddress"
   ).innerText = `ETH Address: ${truncateAddress(window.userAddress)}`;

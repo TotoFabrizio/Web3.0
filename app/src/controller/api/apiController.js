@@ -8,5 +8,9 @@ module.exports = {
         }
         const result = await userServices.createUser(req.body);
         res.redirect("/users/register")
+    },
+    findUserByWallet: async(req,res)=>{
+        const user = await userServices.findUserByWallet(req.params.ethAddress)
+        res.send(user)
     }
 }
