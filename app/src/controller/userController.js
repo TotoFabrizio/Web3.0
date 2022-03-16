@@ -6,16 +6,14 @@ const controller = {
     register: (req, res) => {
         res.render("register");
     },
-    saveUser: async (req, res) => {
+    updateUser: async (req, res) => {
         let errors = validationResult(req);
-        console.log(errors);
-        console.log(req.body);
-        console.log(await userServices.findUserByEmail(req.body.email))
+        console.log(req.body)
         if (
             errors.isEmpty() &&
             await userServices.findUserByEmail(req.body.email) == null
         ) {
-            userServices.createUser(req.body);
+            userServices.updateData(req.body,req.body.ethAddress);
             res.redirect("/");
         } else {
             if (await userServices.findUserByEmail(req.body.email) != null) {

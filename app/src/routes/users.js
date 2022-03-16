@@ -5,7 +5,7 @@ const validateRegister = require("../middlewares/registerValid");
 
 /* GET users listing. */
 router.get("/register", userController.register);
-router.post("/register", validateRegister, userController.saveUser);
+router.post("/register", validateRegister, userController.updateUser);
 
 router.get("/login",userController.login);
 

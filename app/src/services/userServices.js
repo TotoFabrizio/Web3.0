@@ -16,6 +16,10 @@ const userServices = {
             { where: { walletaddress: walletaddress } }
         );
     },
+    async findUserByEmail(email) {
+        const userFound = await db.User.findOne({ where: { email: email } });
+        return userFound;
+    },
 };
 
 module.exports = userServices;
