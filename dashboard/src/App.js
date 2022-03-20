@@ -5,6 +5,7 @@ import Footer from './components/footer/footer';
 import { Switch, Route } from "react-router-dom";
 import Login from './components/login/login';
 import ethAddressinfo from './components/ethAddressinfo/ethAddressinfo';
+import Register from './components/register/register'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <div id='content'>
           <Switch>
             <Route path='/login' exact={true} component={Login}/>
+            <Route path='/register' exact={true} component={Register}/>
             <Route path='/' exact={true} component={ethAddressinfo}/>
           </Switch>
         </div>

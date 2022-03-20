@@ -74,11 +74,11 @@ class Login extends Component {
         const data = {
           walletaddress: selectedAccount
         }
-        /*const response = await fetch("/api/users/create", {
+        const response = await fetch("/api/users/create", {
           method: "POST",
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data),
-        });*/
+        });
         window.location.replace("/")
       } catch (error) {
         console.error(error);
