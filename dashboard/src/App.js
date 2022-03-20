@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap'
+import NavBar from './components/navBar/navBar'
+import Footer from './components/footer/footer';
+import { Switch, Route } from "react-router-dom";
+import Login from './components/login/login';
+import ethAddressinfo from './components/ethAddressinfo/ethAddressinfo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='wrapper'>
+      <NavBar />
+      <div id='content-wrapper' className='d-flex flex-column'>
+        <div id='content'>
+          <Switch>
+            <Route path='/login' exact={true} component={Login}/>
+            <Route path='/' exact={true} component={ethAddressinfo}/>
+          </Switch>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 }
